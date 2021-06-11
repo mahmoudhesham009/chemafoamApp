@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:elevation="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/tool_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:title="Chema Foam"
+            app:titleTextColor="#fff"
+            app:menu="@menu/filteration_menu"
+            app:layout_scrollFlags="scroll"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:text="Consumption analysis:"
+                android:textSize="@dimen/_25sdp"
+                android:textStyle="bold" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_50sdp">
+
+                <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                    android:id="@+id/yourCircularProgressbar1"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_120sdp"
+                    app:cpb_background_progressbar_color="#CDD3FA"
+                    app:cpb_background_progressbar_width="10dp"
+                    app:cpb_progress_direction="to_right"
+                    app:cpb_progressbar_color="#AF0202"
+                    app:cpb_progressbar_width="10dp"
+                    app:cpb_round_border="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/yourCircularProgressbar2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/a_loss"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nan"
+                    android:textSize="@dimen/_20sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/yourCircularProgressbar1"
+                    app:layout_constraintEnd_toEndOf="@+id/yourCircularProgressbar1"
+                    app:layout_constraintStart_toStartOf="@+id/yourCircularProgressbar1"
+                    app:layout_constraintTop_toTopOf="@id/yourCircularProgressbar1" />
+
+                <TextView
+                    android:id="@+id/b_loss"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nan"
+                    android:textSize="@dimen/_20sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/yourCircularProgressbar2"
+                    app:layout_constraintEnd_toEndOf="@+id/yourCircularProgressbar2"
+                    app:layout_constraintStart_toStartOf="@+id/yourCircularProgressbar2"
+                    app:layout_constraintTop_toTopOf="@id/yourCircularProgressbar2" />
+
+                <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                    android:id="@+id/yourCircularProgressbar2"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_120sdp"
+                    app:cpb_background_progressbar_color="#CDD3FA"
+                    app:cpb_background_progressbar_width="10dp"
+                    app:cpb_progress_direction="to_right"
+                    app:cpb_progressbar_color="#AF0202"
+                    app:cpb_progressbar_width="10dp"
+                    app:cpb_round_border="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/yourCircularProgressbar1"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/a_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:text="Shift A Loss"
+                    android:textColor="#000"
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/yourCircularProgressbar1"
+                    app:layout_constraintStart_toStartOf="@+id/yourCircularProgressbar1"
+                    app:layout_constraintTop_toBottomOf="@id/yourCircularProgressbar1" />
+
+                <TextView
+                    android:id="@+id/b_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:text="Shift B Loss"
+                    android:textColor="#000"
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/yourCircularProgressbar2"
+                    app:layout_constraintStart_toStartOf="@+id/yourCircularProgressbar2"
+                    app:layout_constraintTop_toBottomOf="@id/yourCircularProgressbar2" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:text="Work Hour:"
+                android:textSize="@dimen/_25sdp"
+                android:textStyle="bold" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_50sdp">
+
+                <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                    android:id="@+id/yourCircularProgressbar1w"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_120sdp"
+                    app:cpb_background_progressbar_color="#CDD3FA"
+                    app:cpb_background_progressbar_width="10dp"
+                    app:cpb_progress_direction="to_right"
+                    app:cpb_progressbar_color="#02A9AF"
+                    app:cpb_progressbar_width="10dp"
+                    app:cpb_round_border="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/yourCircularProgressbar2w"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/a_work_eff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nan"
+                    android:textSize="@dimen/_20sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/yourCircularProgressbar1w"
+                    app:layout_constraintEnd_toEndOf="@+id/yourCircularProgressbar1w"
+                    app:layout_constraintStart_toStartOf="@+id/yourCircularProgressbar1w"
+                    app:layout_constraintTop_toTopOf="@id/yourCircularProgressbar1w" />
+
+                <TextView
+                    android:id="@+id/b_work_eff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nan"
+                    android:textSize="@dimen/_20sdp"
+                    app:layout_constraintBottom_toBottomOf="@+id/yourCircularProgressbar2w"
+                    app:layout_constraintEnd_toEndOf="@+id/yourCircularProgressbar2w"
+                    app:layout_constraintStart_toStartOf="@+id/yourCircularProgressbar2w"
+                    app:layout_constraintTop_toTopOf="@id/yourCircularProgressbar2w" />
+
+                <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                    android:id="@+id/yourCircularProgressbar2w"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_120sdp"
+                    app:cpb_background_progressbar_color="#CDD3FA"
+                    app:cpb_background_progressbar_width="10dp"
+                    app:cpb_progress_direction="to_right"
+                    app:cpb_progressbar_color="#02A9AF"
+                    app:cpb_progressbar_width="10dp"
+                    app:cpb_round_border="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/yourCircularProgressbar1w"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/a_titlew"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:text="Shift A Productivity"
+                    android:textColor="#000"
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/yourCircularProgressbar1w"
+                    app:layout_constraintStart_toStartOf="@+id/yourCircularProgressbar1w"
+                    app:layout_constraintTop_toBottomOf="@id/yourCircularProgressbar1w" />
+
+                <TextView
+                    android:id="@+id/b_titlew"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:text="Shift B Productivity"
+                    android:textColor="#000"
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/yourCircularProgressbar2w"
+                    app:layout_constraintStart_toStartOf="@+id/yourCircularProgressbar2w"
+                    app:layout_constraintTop_toBottomOf="@id/yourCircularProgressbar2w" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
